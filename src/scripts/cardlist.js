@@ -1,5 +1,6 @@
 import Card from './card.js'
 
+
 class CardList {
     constructor(container, initialCards, button) {
       this.container = container;
@@ -19,6 +20,7 @@ class CardList {
   
     addcard(event) {
       event.preventDefault();
+      const formNewCard = document.forms.newCard;
       const name = formNewCard.elements.placeName.value;
       const link = formNewCard.elements.placeLink.value;
       const newcard = new Card(name, link);

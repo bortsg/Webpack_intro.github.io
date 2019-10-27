@@ -34,7 +34,7 @@ formUserInfo.addEventListener('submit', function(event){
   });         
 });
 
-const formNewCard = document.forms.newCard;
+export const formNewCard = document.forms.newCard;
 const placeName =  formNewCard.elements[0];
 const placeLink = formNewCard.elements[1];
 const placeSubmit = formNewCard.elements[2];

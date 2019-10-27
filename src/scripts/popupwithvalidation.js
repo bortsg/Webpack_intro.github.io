@@ -1,4 +1,5 @@
 import Popup from './popup.js'
+import {handleValidate} from './validation.js'
 
 class PopupWithValidation extends Popup {
     constructor(popupElem, button){
@@ -16,6 +17,7 @@ class PopupWithValidation extends Popup {
         const formUserInfo = document.forms.userInfoEdit;
         formUserInfo.userName.value = document.querySelector('.user-info__name').textContent;
         formUserInfo.userJob.value = document.querySelector('.user-info__job').textContent;
+        
   
         document.querySelector(`.popup__input_userName`).classList.remove('popup__invalid');  
         document.querySelector(`.popup__input_userJob`).classList.remove('popup__invalid');  
@@ -40,6 +42,7 @@ class PopupWithValidation extends Popup {
       //случай открытия формы добавления нового места
       if (this.button.id === "newCardButton") {
         //валидация на ввод в форму нового места
+        const formNewCard = document.forms.newCard;
         formNewCard.addEventListener('input', function(event){
           event.preventDefault();
           handleValidate(event);
